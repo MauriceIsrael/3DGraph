@@ -14,7 +14,7 @@
 
 
    // create a smooth curve from 4 points
-   const curve = new LineCurve3(new Vector3(4, 4, 0), new Vector3(8, 8, 0))
+   const curve = new LineCurve3(new Vector3(4, 0, 4), new Vector3(8, 0, 8))
   // convert curve to an array of 100 points
   const points = curve.getPoints(100)
 </script>
@@ -34,31 +34,39 @@
 
 <T.DirectionalLight position={[0, 10, 10]} castShadow />
 
-<T.Mesh
-  
-  position.y={1}
-  scale={$scale}
-  on:pointerenter={() => scale.set(1.5)}
-  on:pointerleave={() => scale.set(1)}
-  castShadow
->
-  <T.BoxGeometry args={[1, 2, 1]} />
-  <T.MeshStandardMaterial color="hotpink" />
+<!-- Disque vert clair-->
+<T.Mesh position.y={40} rotation.x={-Math.PI/2} receiveShadow>
+  <T.CircleGeometry args={[40, 100]}/>
+  <T.MeshStandardMaterial color="green" transparent={true} opacity={0.5}/>
 </T.Mesh>
 
-<T.Mesh rotation.x={-Math.PI/2} receiveShadow>
-  <T.CircleGeometry args={[4, 40]}/>
-  <T.MeshStandardMaterial color="white" />
+<!-- Disque bleu cyan-->
+<T.Mesh position.y={-20} rotation.x={-Math.PI/2} receiveShadow>
+  <T.CircleGeometry args={[40, 100]}/>
+  <T.MeshStandardMaterial color="cyan" transparent={true} opacity={0.5}/>
 </T.Mesh>
 
-<T.Mesh position.x={4} position.y={4}>
+<!-- Disque bleu clair-->
+<T.Mesh position.y={0} rotation.x={-Math.PI/2} receiveShadow>
+  <T.CircleGeometry args={[40, 100]}/>
+  <T.MeshStandardMaterial color="lightblue" transparent={true} opacity={0.5}/>
+</T.Mesh>
+
+<!-- Disque bleu foncé-->
+<T.Mesh position.y={20} rotation.x={-Math.PI/2} receiveShadow>
+  <T.CircleGeometry args={[40, 100]}/>
+  <T.MeshStandardMaterial color="darkblue" transparent={true} opacity={0.5}/>
+</T.Mesh>
+
+<!-- Spheres bleues-->
+<T.Mesh position.x={4} position.z={4}>
+  <T.SphereGeometry args={[1, 100]}/>
+  <T.MeshStandardMaterial color="blue" />
+</T.Mesh>
+
+<T.Mesh position.x={8} position.z={8}>
   <T.SphereGeometry />
-  <T.MeshStandardMaterial color="white" />
-</T.Mesh>
-
-<T.Mesh position.x={8} position.y={8}>
-  <T.SphereGeometry />
-  <T.MeshStandardMaterial color="white" />
+  <T.MeshStandardMaterial color="blue" />
 </T.Mesh>
 
 <T.Mesh

@@ -1,10 +1,27 @@
-<script>
+<script lang="ts">
   import { T, useFrame } from '@threlte/core'
-  import { interactivity, Grid, OrbitControls } from '@threlte/extras'
+  import { interactivity, Grid, OrbitControls, Text, HTML } from '@threlte/extras'
   import { spring } from 'svelte/motion'
-  import { Color, LineCurve3, Vector3 } from 'three'
+  import { Color, LineCurve3, Source, Vector3 } from 'three'
   import Link from './Link.svelte';
-    import Plan from './Plan.svelte';
+  import Plan from './Plan.svelte';
+  import { onMount } from 'svelte'
+	import type { Links } from '$lib/type'
+
+  
+	let links: Links = []
+
+  // Charger le fichier JSON au chargement du composant
+  onMount(async () => {
+    try {
+      const response = await fetch('jeu_de_donnees_100_lignes.json');
+      const data = await response.json();
+      links = data.Links;
+    } catch (error) {
+      console.error('Erreur lors du chargement du fichier JSON :', error);
+    }
+  });
+
 
   interactivity()
   const scale = spring(1)
@@ -13,29 +30,6 @@
     rotation += delta
   })
 
-  // create a smooth curve from 4 points
-  const curve2 = new LineCurve3(new Vector3(-8, 20, 3), new Vector3(12, 20, 10))
-  // convert curve to an array of 100 points
-  let points2 = curve2.getPoints(100)
-
-  const link1 = {
-    source: new Vector3(-8,0,6),
-    destination: new Vector3(-12,0,-4),
-    color: "blue"
-  };
-  
-
-  const link2 = {
-    source: new Vector3(28,20,-16),
-    destination: new Vector3(28,-20,-16),
-    color: "green"
-  };
-
-  const link3 = {
-    source: new Vector3(-8,20,3),
-    destination: new Vector3(12,20,10),
-    color: "yellow"
-  };
 </script>
 
 
@@ -53,12 +47,21 @@
 
 <T.DirectionalLight position={[0, 10, 10]} castShadow />
 
+
+
 <Plan plan={-1} color="darkblue"/>
 <Plan plan={0}/>
-<Plan plan={1} color="lightblue"/>
 
+<Text
+  text="Salut les gars!"
+  position={[10,60,10]}
+  fontSize={1.8}/>
 
-<!-- Spheres bleues-->
-<Link {...link1}/>
-<Link {...link2}/>
-<Link {...link3}/>
+<div>
+  {#if links}
+	  {#each links as item, i}
+    <Link source={item.source} destination={item.destination} color={item.color}/>
+	  {/each}
+  {/if}
+</div>
+

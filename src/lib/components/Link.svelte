@@ -3,7 +3,7 @@
     import { MeshLineGeometry, MeshLineMaterial } from '@threlte/extras'
     import {LineCurve3} from 'three';
     import type { Vector3 } from 'three';
-   
+    
     export let source: Vector3;
     export let destination: Vector3;
     export let color : string;
@@ -36,7 +36,7 @@
   
   <T.Mesh >
     <MeshLineGeometry points={taper} shape="taper"/>
-    <MeshLineMaterial color={color} dashArray={dashArray} dashRatio={dashRatio} dashOffset={0} transparent={true} opacity={1}/>
+    <MeshLineMaterial color={color} dashArray={dashArray} dashRatio={dashRatio} dashOffset={0} transparent={true} opacity={1} width={0.3}/>
   </T.Mesh>
   
   

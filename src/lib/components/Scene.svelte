@@ -30,7 +30,6 @@
 
 </script>
 
-
 <Grid
 	infiniteGrid
 	sectionColor="#4a4b4a"
@@ -45,13 +44,11 @@
 
 <T.DirectionalLight position={[0, 10, 10]} castShadow />
 
-
-
 <Plan plan={-1} color="darkblue"/>
 <Plan plan={0}/>
 
 <Text
-  text="Salut les gars!"
+  text="Breaking awesOme Super newS"
   position={[10,60,10]}
   fontSize={1.8}/>
 

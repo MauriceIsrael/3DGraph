@@ -10,6 +10,15 @@ le composant Plan représente un plan matérialisé par un disque
 Le composant Link représente un lien entre une source et une destination:
     les sources/dest sont des petites sphéres
     on trace un lien style "taper" entre les deux sphères.
-    Si les liens sont verticaux, on les mets en pointillés
+    Si les liens sont verticaux, on les mets en pointillés.
+
+une scene est crée avec le mode interactif, une grille infinie et les composants précédents.
 
 Le jeu de données est généré aléatoirement par un petit script Python.
+
+pour le deploiement (ici sur Google Compute Engine)
+* npm run build
+* npm run prepare
+* npm run deploy
+
+enjoy!

@@ -1,13 +1,11 @@
 <script lang="ts">
   import { T, useFrame } from '@threlte/core'
-  import { interactivity, Grid, OrbitControls, Text, HTML } from '@threlte/extras'
+  import { interactivity, Grid, OrbitControls, Text } from '@threlte/extras'
   import { spring } from 'svelte/motion'
-  import { Color, LineCurve3, Source, Vector3 } from 'three'
   import Link from './Link.svelte';
   import Plan from './Plan.svelte';
-  import { onMount } from 'svelte'
-	import type { Links } from '$lib/type'
-
+  import { onMount } from 'svelte';
+  import type { Links } from '$lib/type'
   
 	let links: Links = []
 

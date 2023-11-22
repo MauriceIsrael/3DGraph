@@ -1,9 +1,21 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { defineConfig } from 'vite';
 
-export default defineConfig({
-	plugins: [sveltekit()],
-	ssr: {
-		noExternal: ['three']
+
+
+const config: UserConfig = {
+plugins: [sveltekit()],
+resolve: {
+	alias: {
+	three: 'three'
+	},
+	extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
+},
+optimizeDeps: {
+	include: ['three']
+},
+ssr: {
+	noExternal: ['three']
 	}
-});
+};
+
+export default config;

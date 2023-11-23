@@ -48,7 +48,7 @@
 <Plan plan={0}/>
 
 <Text
-  text="Breaking awesOme Super newS"
+  text="Les réseaux, c'est beau!"
   position={[10,60,10]}
   fontSize={1.8}/>
 

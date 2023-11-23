@@ -19,7 +19,7 @@
     if ((source.x == destination.x) && (source.z == destination.z)) {
         dashArray = 0.1
         dashRatio = 0.5
-        color = 'Pink'
+        color = 'black'
     }
         
 </script>

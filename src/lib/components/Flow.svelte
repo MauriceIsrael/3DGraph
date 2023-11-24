@@ -17,7 +17,7 @@
   
   <T.Mesh >
     <MeshLineGeometry points={taper} shape="taper"/>
-    <MeshLineMaterial color={color} transparent={true} opacity={1} width={1.5}/>
+    <MeshLineMaterial color={color} transparent={true} opacity={1} width={2}/>
   </T.Mesh>
   
   

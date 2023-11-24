@@ -7,11 +7,13 @@ type Link = {
 type Flow = {
 	name: string;
     controlPoint: Vector3[];
+    color : string;
     }
 
 type Lan = {
     type: string;
     position: Vector3;
+    color : string;
     }
 
 type User = {

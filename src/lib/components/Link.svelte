@@ -36,7 +36,7 @@
   
   <T.Mesh >
     <MeshLineGeometry points={taper} shape="taper"/>
-    <MeshLineMaterial color={color} dashArray={dashArray} dashRatio={dashRatio} dashOffset={0} transparent={true} opacity={1} width={0.3}/>
+    <MeshLineMaterial color={color} dashArray={dashArray} dashRatio={dashRatio} dashOffset={0} transparent={false} opacity={0.5} width={0.3}/>
   </T.Mesh>
   
   

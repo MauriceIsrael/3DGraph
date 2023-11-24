@@ -4,6 +4,7 @@
     import {CatmullRomCurve3, Vector3 } from 'three';
    
     export let controlPoints: Vector3[]
+    export let color : string;
     
     // convert curve to an array of 100 points
     // const points = [source, destination]
@@ -16,7 +17,7 @@
   
   <T.Mesh >
     <MeshLineGeometry points={taper} shape="taper"/>
-    <MeshLineMaterial color={'red'} transparent={true} opacity={1} width={1.5}/>
+    <MeshLineMaterial color={color} transparent={true} opacity={1} width={1.5}/>
   </T.Mesh>
   
   

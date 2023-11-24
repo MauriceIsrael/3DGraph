@@ -9,5 +9,16 @@ type Flow = {
     controlPoint: Vector3[];
     }
 
+type Lan = {
+    type: string;
+    position: Vector3;
+    }
+
+type User = {
+    position: Vector3;
+    }
+
 export type Links = Array<Link | null>
 export type Flows = Array<Flow | null>
+export type Lans = Array<Lan | null>
+export type Users = Array<User | null>

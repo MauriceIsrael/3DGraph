@@ -1,12 +1,11 @@
 <script lang="ts">
     import { T, useFrame } from '@threlte/core'
-    import { MeshLineGeometry, Text } from '@threlte/extras'
-    import {LineCurve3} from 'three';
+    import { Text } from '@threlte/extras'
     import type {  Vector3 } from 'three';
     
     export let centre: Vector3;
-    export let type: string;
-    export let name: string;
+    export let type: string = '';
+    export let name: string = '';
     export let color : string;
 
     let rotation = 0
@@ -58,7 +57,7 @@
     position.z={centre.z -5}
     position.x={centre.x -5}
     position.y={centre.y-10}
-    text={name + '/' + type}
+    text={name + ' ' + type}
     fontSize={4.8}/>
 
 

@@ -1,14 +1,11 @@
-mcolors.CSS4_COLOR
 import random
 import math
+import json
+import couleurs 
 
-palette = materialdesigncolors.get_palette()
 
-print(palette.primary)
-print(palette.secondary)
-print(palette.accent)
-
-colors = ['blue', 'indigo', 'orange', 'yellow', 'green', 'red', 'violet', 'lightblue']
+colors = couleurs.getTableauCouleurs()
+print(colors)
 
 # Génération du jeu de données
 jeu_de_donnees = {"Links": [], "Users":[] , "Lans":[], "Flows":[]}
@@ -130,7 +127,7 @@ for i in range(3):
 
 
 # Enregistrement du jeu de données dans un fichier JSON
-with open("jeu_de_donnees WAN.json", "w") as fichier:
+with open('../../../static/data.json', "w") as fichier:
     json.dump(jeu_de_donnees, fichier, indent=2)
 
 print("Jeu de données enregistré avec succès.")

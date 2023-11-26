@@ -22,7 +22,7 @@
   // Charger le fichier JSON au chargement du composant
   onMount(async () => {
     try {
-      const response1 = await fetch('jeu_de_donnees\ WAN.json');
+      const response1 = await fetch('data.json');
       const data = await response1.json();
       flows = data.Flows;
       links = data.Links;

@@ -1,12 +1,14 @@
 <script lang="ts">
     import { T } from '@threlte/core'
     import { Text } from '@threlte/extras'
-
+    import {css4Colors} from '$lib/couleurs'
+    
     export let plan = 0;
-    export let color : string = 'cyan';
+    export let color : string = css4Colors.cyan;
     export let name = ''
 
     const etage = plan * 80;
+
 </script>
 
 <!-- Disque bleu cyan-->
@@ -16,6 +18,6 @@
 
     <Text
         text={name}
-        position.y ={-110}
-        fontSize={4.8}/>
+        position.y ={-190}
+        fontSize={6.8}/>
 </T.Mesh>

@@ -1,6 +1,12 @@
-import json
+mcolors.CSS4_COLOR
 import random
 import math
+
+palette = materialdesigncolors.get_palette()
+
+print(palette.primary)
+print(palette.secondary)
+print(palette.accent)
 
 colors = ['blue', 'indigo', 'orange', 'yellow', 'green', 'red', 'violet', 'lightblue']
 

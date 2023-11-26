@@ -3,6 +3,7 @@
     import { MeshLineGeometry, MeshLineMaterial } from '@threlte/extras'
     import {LineCurve3} from 'three';
     import type { Vector3 } from 'three';
+    import {css4Colors} from '$lib/couleurs'
     
     export let source: Vector3;
     export let destination: Vector3;
@@ -19,7 +20,7 @@
     if ((source.x == destination.x) && (source.z == destination.z)) {
         dashArray = 0.1
         dashRatio = 0.5
-        color = 'black'
+        color = css4Colors.blueviolet
     }
         
 </script>

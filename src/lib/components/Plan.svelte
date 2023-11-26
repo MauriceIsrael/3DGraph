@@ -14,7 +14,7 @@
 <!-- Disque bleu cyan-->
 <T.Mesh position.y={etage} rotation.x={-Math.PI/2} receiveShadow>
     <T.CircleGeometry args={[200, 100]} />
-    <T.MeshStandardMaterial color={color} transparent={true} opacity={0.3} />
+    <T.MeshStandardMaterial color={color} transparent={true} opacity={0.7} />
 
     <Text
         text={name}

@@ -11,8 +11,8 @@
   import type { Links, Flows, Lans, Users } from '$lib/type'
   import { Color, LoadingManager, Vector3 } from 'three';
   import Flow from './Flow.svelte';
-  
-  
+  import {css4Colors} from '$lib/couleurs'
+
   
 	let links: Links = []
   let flows: Flows = []
@@ -46,6 +46,8 @@
 
 </script>
 
+
+ 
 <Grid
 	infiniteGrid
 	sectionColor="#4a4b4a"
@@ -54,16 +56,16 @@
 	fadeDistance={400}
 />
 
-<T.PerspectiveCamera makeDefault position={[10, 100, 100]} fov={60}>
+<T.PerspectiveCamera makeDefault position={[10, 150, 300]} fov={100}>
 	<OrbitControls enableDamping />
 </T.PerspectiveCamera>
 
 <T.DirectionalLight position={[0, 10, 10]} castShadow />
 
-<Plan plan={-1} color="Aqua" name="Transport"/>  <!--Bleu foncé-->
-<Plan plan={0}  color="Turquoise" name="Routage"/>    <!--Bleu-vert moyen-->
-<Plan plan={1}  color="cadetblue"name="Usagers"/>    <!--Bleu-vert-->
-<Plan plan={2}  color="Green "name="Services"/>   <!--Bleu vert très clair-->
+<Plan plan={-1} color={css4Colors.midnightblue} name="Transport"/>  <!--Bleu foncé-->
+<Plan plan={0}  color={css4Colors.darkblue} name="Routage"/>    <!--Bleu-vert moyen-->
+<Plan plan={1}  color={css4Colors.darkcyan} name="Usagers"/>    <!--Bleu-vert-->
+<Plan plan={2}  color={css4Colors.aqua} name="Services"/>   <!--Bleu vert très clair-->
 
 
 {#if lans}

@@ -3,8 +3,6 @@
   import Code from './Code.svelte';
 </script>
 
-
-  
 <Canvas>
   <Code />
 </Canvas>

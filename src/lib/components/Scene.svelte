@@ -11,10 +11,9 @@
   import type { Links, Flows, Lans, Users } from '$lib/type'
   import Flow from './Flow.svelte';
   import {css4Colors} from '$lib/couleurs'
-  import { createEventDispatcher } from 'svelte';
-
-  const dispatch = createEventDispatcher();
   
+  export let progress = 0;
+
 	let links: Links = []
   let flows: Flows = []
   let lans: Lans = []
@@ -38,17 +37,9 @@
   });
 
   onReveal(() => {
-    dispatch('message', {
-        progress: 100,
-        closed: true
-      });
+    progress= 100
     console.log('The component has been revealed')
-  return () => {
-    console.log('The component has been unmounted or suspended again')
-    
-  }
-})
-
+      });
 
   interactivity()
   const scale = spring(1)

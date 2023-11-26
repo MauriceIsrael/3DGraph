@@ -1,8 +1,7 @@
 <script lang="ts">
   import Tab, { Icon, Label } from '@smui/tab';
   import TabBar from '@smui/tab-bar';
-  import { onMount } from 'svelte';
-
+  
   let tabs = [
     {
       icon: 'home',
@@ -25,7 +24,6 @@
     }
   ];
   let active = tabs[0];
-  let progress = 0;
   let closed = false;
 
 </script>

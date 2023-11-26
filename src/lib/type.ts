@@ -24,3 +24,14 @@ export type Links = Array<Link | null>
 export type Flows = Array<Flow | null>
 export type Lans = Array<Lan | null>
 export type Users = Array<User | null>
+
+type Day = {
+	count: number
+	day: number
+	level: number
+	month: string
+	name: string
+	year: number
+}
+
+export type Contributions = Array<Day | null>

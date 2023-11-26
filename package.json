@@ -50,6 +50,7 @@
   "type": "module",
   "dependencies": {
     "@dimforge/rapier3d-compat": "^0.11.2",
+    "@octokit/core": "^5.0.2",
     "@threlte/rapier": "^1.1.3",
     "loremipsum": "^0.1.2",
     "material-design-colors": "^1.0.2"

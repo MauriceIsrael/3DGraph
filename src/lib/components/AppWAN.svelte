@@ -4,7 +4,7 @@
 </script>
 
 <Canvas>
-  <Scene />
+  <Scene on:message/>
 </Canvas>
 
 

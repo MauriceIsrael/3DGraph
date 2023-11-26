@@ -1,7 +1,7 @@
 <script lang="ts">
   import Tab, { Icon, Label } from '@smui/tab';
   import TabBar from '@smui/tab-bar';
-  import LinearProgress from '@smui/linear-progress';
+  import { onMount } from 'svelte';
 
   let tabs = [
     {
@@ -10,15 +10,28 @@
       route: '/',
     },
     {
+      icon: 'code',
+      label: 'Code', 
+      route: '/code'
+    },
+    {
+      icon: 'link',
+      label: 'Inexorable', 
+      route: '/inexorable'
+    },
+    {
       label: 'About',
       route: '/about'
     }
   ];
   let active = tabs[0];
+  let progress = 0;
+  let closed = false;
 
 </script>
 
-<LinearProgress indeterminate />
+<!-- <LinearProgress indeterminate {progress} {closed} /> -->
+
 <TabBar {tabs} let:tab bind:active>
   <nav> 
     <Tab {tab} href={tab.route}>

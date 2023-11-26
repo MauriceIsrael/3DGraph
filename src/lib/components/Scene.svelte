@@ -1,6 +1,6 @@
 <script lang="ts">
   import { T, useFrame } from '@threlte/core'
-  import { interactivity, Grid, OrbitControls, Text } from '@threlte/extras'
+  import { interactivity, Grid, OrbitControls, Text , onReveal} from '@threlte/extras' 
   import { spring } from 'svelte/motion'
   import Link from './Link.svelte';
   import Plan from './Plan.svelte';
@@ -9,10 +9,11 @@
   import Lan from './Lan.svelte'
   import { onMount } from 'svelte';
   import type { Links, Flows, Lans, Users } from '$lib/type'
-  import { Color, LoadingManager, Vector3 } from 'three';
   import Flow from './Flow.svelte';
   import {css4Colors} from '$lib/couleurs'
+  import { createEventDispatcher } from 'svelte';
 
+  const dispatch = createEventDispatcher();
   
 	let links: Links = []
   let flows: Flows = []
@@ -35,6 +36,18 @@
       console.error('Erreur lors du chargement du fichier JSON :', error);
     }
   });
+
+  onReveal(() => {
+    dispatch('message', {
+        progress: 100,
+        closed: true
+      });
+    console.log('The component has been revealed')
+  return () => {
+    console.log('The component has been unmounted or suspended again')
+    
+  }
+})
 
 
   interactivity()

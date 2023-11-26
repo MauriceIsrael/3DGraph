@@ -1,9 +1,9 @@
 <script lang="ts">
-  import App from '$lib/components/App.svelte'
+  import AppWAN from '$lib/components/AppWAN.svelte'
 </script>
 
 <div>
-  <App />
+  <AppWAN />
 </div>
 
 <style>
